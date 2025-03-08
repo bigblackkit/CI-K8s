@@ -1,1 +1,1 @@
-![CI_CD_k8s](https://github.com/user-attachments/assets/a9f7bc62-8aa7-450a-ad57-18022689b8f0)
+![CI_CD_k8s_5](https://github.com/user-attachments/assets/136f8a93-f0c6-4706-a083-52caffa4a73c)
