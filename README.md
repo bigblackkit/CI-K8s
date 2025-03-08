@@ -1,3 +1,4 @@
-![CI_CD_k8s_7](https://github.com/user-attachments/assets/95faea36-947a-4815-8ce1-74feecb88e3a)
+![CI_CD_k8s_7](https://github.com/user-attachments/assets/e7e7d34c-463f-4e9e-b76a-60224428d851)
+
 
 Hello World
