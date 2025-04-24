@@ -12,7 +12,7 @@ CD : https://github.com/bigblackkit/CD-K8s.git
 В дженкинс файле:
  - Build docker image
  - Login on DockerHub
- - Push Dicker image on DockerHub
+ - Push Docker image on DockerHub
  - Logout from DockerHub
  - Delete local Docker Image
  - Update Docker Image Tag on CD : https://github.com/bigblackkit/CD-K8s.git
@@ -28,7 +28,7 @@ OS ubuntu-22.04.5-live-server-amd64 , в качестве средства ви�
 In the Jenkins file:
 - Build docker image
 - Login on DockerHub
-- Push Dicker image on DockerHub
+- Push Docker image on DockerHub
 - Logout from DockerHub
 - Delete local Docker Image
 - Update Docker Image Tag on CD : https://github.com/bigblackkit/CD-K8s.git
