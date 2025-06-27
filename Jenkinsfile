@@ -14,7 +14,6 @@ pipeline{
         stage("Make Docker Image"){
             steps{
                 echo "========Build========"
-                sh 'echo "Build by Jenkins Build# $BUILD_ID" >> index.html'
                 sh 'docker build -t bigblackkit/site_on_k8s:$BUILD_ID .'
                  }
         }
@@ -38,7 +37,7 @@ pipeline{
         }
         stage('Update Tag') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'GitlabCred', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+                sshagent(credentials: ['GitlabSSHKey']) {
                 git branch: 'main', credentialsId: 'GitlabCred', url: 'http://192.168.0.31/kit/argocd.git'
                 echo 'Updating Image TAG'
                 sh '''#!/bin/bash            
@@ -52,7 +51,8 @@ pipeline{
                       git config --global --add safe.directory /home/kit/argocd
                       git -C /home/kit/argocd add .
                       git -C /home/kit/argocd commit -am "Update Image tag"
-                      git -C /home/kit/argocd push http://${GIT_USERNAME}:${GIT_PASSWORD}@192.168.0.31/kit/argocd.git
+                      git remote set-url origin git@192.168.0.31:kit/argocd.git
+                      git -C /home/kit/argocd push origin main
                 '''
                 }
             }            
