@@ -1,6 +1,3 @@
-FROM ubuntu:latest
-RUN apt-get -y update
-RUN apt-get install -y apache2
-COPY index.html /var/www/html/
-CMD [ "/usr/sbin/apache2ctl", "-DFOREGROUND" ]
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/
 EXPOSE 80
